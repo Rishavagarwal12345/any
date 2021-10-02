@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity(),ActivityCompat.OnRequestPermissionsResu
         }
     }
 
+    //ye jo hai bilkul thick hai
+
+
     private fun makePhoneCallAfterPermission(view: View)
     {
         if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED)
@@ -39,7 +42,7 @@ class MainActivity : AppCompatActivity(),ActivityCompat.OnRequestPermissionsResu
     {
         if(ActivityCompat.shouldShowRequestPermissionRationale(this,android.Manifest.permission.CALL_PHONE))
         {
-            val snack = Snackbar.make(view,"permission to dena hi hoga bsdk" + "do bhai",Snackbar.LENGTH_INDEFINITE)
+            val snack = Snackbar.make(view,"permission is required" + "please give",Snackbar.LENGTH_INDEFINITE)
             snack.setAction("ok",View.OnClickListener {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CALL_PHONE),PERMISSION_REQUEST_PHONE_CALL)
             })
