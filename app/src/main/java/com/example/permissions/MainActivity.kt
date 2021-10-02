@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity(),ActivityCompat.OnRequestPermissionsResu
     {
         if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED)
         {
-            makePhoneCall()
+            makePhoneCall()// it is done to make the call active
         }
         else
         {
-            requestCallPermission(view)
+            requestCallPermission(view)//request a call
         }
     }
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity(),ActivityCompat.OnRequestPermissionsResu
             action = ACTION_CALL
             data = Uri.parse("tel: 9339952085")
         }
-        startActivity(intent)
+        startActivity(intent) // starting the activity
     }
 
     override fun onRequestPermissionsResult(
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(),ActivityCompat.OnRequestPermissionsResu
         {
             if(grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
-                makePhoneCall()
+                makePhoneCall() //making of ccall again
             }
             else
             {
